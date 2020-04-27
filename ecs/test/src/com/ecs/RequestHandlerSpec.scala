@@ -10,7 +10,7 @@ class RequestHandlerSpec extends CommonSpec {
 
   // As a rule of thumb don't handle requests in opposite
   // direction of the elevator motion.
-  
+
   "Pickup request" must {
     "change state correctly" in {
       // Idle => Moving

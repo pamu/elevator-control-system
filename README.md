@@ -199,4 +199,41 @@ docker run -i ecs:latest ./mill ecs.run
 
 # Output
 
+Output of below three requests.
+```scala
+ ecs.pickup(10, Direction.Up)
+ ecs.drop(2, 5)
+ ecs.pickup(8, Direction.Down)
+```
 
+Docker run
+```
+[elevator-control-system] docker run -i ecs:latest ./mill ecs.run                                                                                     master
+[37/37] ecs.run
+Elevators: [ E0: Idle(Floor(0)), E1: Idle(Floor(0)), E2: Idle(Floor(0))]
+Elevators: [ E0: Moving(Up,Floor(0),Set(Floor(10))), E1: Moving(Up,Floor(0),Set(Floor(8))), E2: Moving(Up,Floor(0),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(0),Set(Floor(10))), E1: Moving(Up,Floor(0),Set(Floor(8))), E2: Moving(Up,Floor(0),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(1),Set(Floor(10))), E1: Moving(Up,Floor(1),Set(Floor(8))), E2: Moving(Up,Floor(1),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(1),Set(Floor(10))), E1: Moving(Up,Floor(1),Set(Floor(8))), E2: Moving(Up,Floor(1),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(2),Set(Floor(10))), E1: Moving(Up,Floor(2),Set(Floor(8))), E2: Moving(Up,Floor(2),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(2),Set(Floor(10))), E1: Moving(Up,Floor(2),Set(Floor(8))), E2: Moving(Up,Floor(2),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(3),Set(Floor(10))), E1: Moving(Up,Floor(3),Set(Floor(8))), E2: Moving(Up,Floor(3),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(3),Set(Floor(10))), E1: Moving(Up,Floor(3),Set(Floor(8))), E2: Moving(Up,Floor(3),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(4),Set(Floor(10))), E1: Moving(Up,Floor(4),Set(Floor(8))), E2: Moving(Up,Floor(4),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(4),Set(Floor(10))), E1: Moving(Up,Floor(4),Set(Floor(8))), E2: Moving(Up,Floor(4),Set(Floor(5)))]
+Elevators: [ E0: Moving(Up,Floor(5),Set(Floor(10))), E1: Moving(Up,Floor(5),Set(Floor(8))), E2: StopOnFloor(Up,Floor(5),Set())]
+Elevators: [ E0: Moving(Up,Floor(5),Set(Floor(10))), E1: Moving(Up,Floor(5),Set(Floor(8))), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(6),Set(Floor(10))), E1: Moving(Up,Floor(6),Set(Floor(8))), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(6),Set(Floor(10))), E1: Moving(Up,Floor(6),Set(Floor(8))), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(7),Set(Floor(10))), E1: Moving(Up,Floor(7),Set(Floor(8))), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(7),Set(Floor(10))), E1: Moving(Up,Floor(7),Set(Floor(8))), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(8),Set(Floor(10))), E1: StopOnFloor(Up,Floor(8),Set()), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(8),Set(Floor(10))), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(9),Set(Floor(10))), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Moving(Up,Floor(9),Set(Floor(10))), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: StopOnFloor(Up,Floor(10),Set()), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Idle(Floor(10)), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Idle(Floor(10)), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Idle(Floor(10)), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+Elevators: [ E0: Idle(Floor(10)), E1: Idle(Floor(8)), E2: Idle(Floor(5))]
+```
