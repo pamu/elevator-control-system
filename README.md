@@ -44,7 +44,7 @@ Elevator control system interface allows
 1. ZIO Scala (STM and asynchronous programs)
 2. Cats-core (type-safety and validations)
 3. pureconfig (fail fast and typesafe configuration)
-4. Scalatest and zio-test (testing)
+4. Scalatest (testing)
 
 # Elevator algorithm
 
@@ -86,7 +86,16 @@ The elevator algorithm, a simple algorithm by which a single elevator can decide
     ```
  5. Each elevator simulation is run in separate fiber.
  6. A separate fiber is used to handle requests assigned to the elevator by the ECS.
+ 7. Configuration
  
+     ```
+    {
+        total-floors = 10
+        total-elevators = 3
+        one-floor-travel-duration = 2 seconds
+        waiting-duration = 1 second
+    }
+    ```
  ### Data-structures
  
  - Elevator state
@@ -187,4 +196,7 @@ docker build -t ecs .
 ```
 docker run -i ecs:latest ./mill ecs.run
 ```
+
+# Output
+
 
